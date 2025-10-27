@@ -10,12 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middleware
-app.use(
-  cors({
-    origin: ["http://localhost:5173", "https://pwa-app-udc4.vercel.app/"],
-    credentials: true,
-  })
-);
+app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 
 // In-memory storage for subscriptions (use database in production)
